@@ -1,7 +1,0 @@
-Cliff Notes:
--Discovered vulnerable apache version
--Exploited apache with metasploit for user named "skyfuck"
--Located and cracked pgp file leading to credentials for another user on the system named "merlin"
--Located user flag in merlin home directory
--Escalated to root due to sudo misconfiguration allowing merlin to run /usr/bin/zip as root
--Got root flag in /root
