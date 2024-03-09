@@ -1,0 +1,19 @@
+Cliff Notes:
+-Discovered misconfigured FTP server allowing anonymous FTP
+-Uploaded php reverse shell to FTP directory
+-The FTP directory was accessible via the webserver running on the same host
+-Run reverse shell via browser
+-This gets a foothold into the server as www-data user
+-Discovered interesting directory named incidents which contained a pcap file
+-Exfil the pcap file by simply moving it to the FTP directory and pulling it via web
+-Reviewed pcap file and found what looks like someone else previously exploiting the same server
+-Continued digging through pcap and found where previous intruder had attempted to elevate permissions and the password that goes with that
+-YOLO tried this password with another account discovered after viewing /etc/passwd via SSH
+-Got logged in as user lennie
+-Discovered some scripts owned by root in lennies home directory.
+-One of these scripts called another script in /etc/ named print.sh
+-print.sh is owned by...Lennie...BINGO
+-edited print.sh to contain a reverse shell
+-waited for root to eventually run the script in lennies home directory
+-got root flag
+-went to bed
